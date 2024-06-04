@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import ImagePrincipal from "../components/ImagePrincipal.astro";
+
+const links = [
+	{
+		title: "GitHub",
+		url: "https://github.com/MiguelBrav",
+		icon: "fab fa-github",
+	},
+	{
+		title: "Email",
+		url: "mailto:tu-email@miguelangelsegurabravo.com",
+		icon: "fas fa-envelope",
+	},
+	{
+		title: "LinkedIn",
+		url: "https://linkedin.com/in/miguelangel-segurabravo",
+		icon: "fab fa-linkedin",
+	},
+	{
+		title: "Portfolio",
+		url: "https://miguel.segurab.com",
+		icon: "fa fa-briefcase",
+	},
+];
+---
+
+<Layout title="Miguel Segura - Social">
+	<main>
+		<div class="linkmedia">
+			<ImagePrincipal />
+			<h1>Miguel Segura</h1>
+			<h2>Contact Media</h2>
+			{
+				links.map((link) => (
+					<ButtonLink
+						title={link.title}
+						url={link.url}
+						icon={link.icon}
+					/>
+				))
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.linkmedia {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 5px;
+	}
+
+	h1,
+	h2 {
+		margin: 0px;
+		text-align: center;
+	}
+</style>
