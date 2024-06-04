@@ -1,0 +1,63 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/img/logo-segurab.ico" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+	<Footer />
+</html>
+<style is:global>
+	html,
+	body {
+		font-family: system-ui, sans-serif;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: linear-gradient(to right, #180d5c, #07556f);
+		background-size: auto;
+	}
+	main {
+		color: white;
+		font-size: 20px;
+	}
+	body{
+		justify-content: center;
+	}
+	body, header, main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
